@@ -10,6 +10,14 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libft.a
-COMP = gcc
-FLAGS = -Wall -Wexstra -Werror 
+CC = gcc
+FILES = main.c ft_bzero.c
+OUT_EXE = out_executable I.
+
+build: $(FILES)
+        $(CC) -o $(OUT_EXE) $(FILES)
+
+clean:
+        rm -f *.o core
+
+rebuild: clean build

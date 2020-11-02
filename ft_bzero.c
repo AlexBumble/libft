@@ -9,6 +9,7 @@
 /*   Updated: 2020/10/28 15:47:31 by jbane            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
 void ft_bzero(void *s, size_t n)
 {
@@ -19,6 +20,6 @@ void ft_bzero(void *s, size_t n)
   s_ucp = (unsigned char *)s;
   while(++i < n)
   {
-    s_uc[i] = '\0';
+      s_ucp[i] = '\0';
   }
 }
