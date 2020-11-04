@@ -24,9 +24,7 @@ void *ft_memccpy(void *restrict dst, const void *restrict src, int c, size_t n)
    {
      dst_ucp[i] = src_ucp[i];
      if (dst_ucp[i] == c_uc)
-     {
        return dst;
-     }
    }
    return NULL;
 }

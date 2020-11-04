@@ -13,9 +13,9 @@ size_t ft_strlcat(char * restrict dst, const char * restrict src, size_t dstsize
     {
         dst[i + dst_len] = src[i];
         if (++i == (dstsize - 1))
-        {
             dst[i + dst_len] = '\0';
-        }
     }
     return src_len;
 }
+
+// https://github.com/Danilo3/intra_forum/blob/master/libft/strlcat.md
