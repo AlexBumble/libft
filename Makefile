@@ -11,7 +11,7 @@
 # **************************************************************************** #
 
 NAME	= libft.a
-FLAGS = -Wall -Werror -Wextra -O3 -c
+FLAGS =	-Wall -Werror -Wextra -I. -c
 FILES	= ft_memset.c\
 		ft_bzero.c\
 		ft_memcpy.c\
@@ -54,8 +54,7 @@ $(OBJ): $(NAME) libft.h
 	gcc $(FLAGS) $< -o $@
 
 $(NAME): $(OBJ) libft.h
-	ar rcs $(NAME) $(OBJ)
-
+	ar rc $(NAME) $(OBJ)
 
 clean:
 	rm -f $(OBJ)
