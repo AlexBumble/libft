@@ -20,9 +20,10 @@ void *ft_memccpy(void *restrict dst, const void *restrict src, int c, size_t n)
 	unsigned char *src_ucp;
 
 	i = -1;
+	c_uc = (unsigned char)c;
 	dst_ucp = (unsigned char *)dst;
 	src_ucp = (unsigned char *)src;
-	while(++i < n)
+	while(++i < (int)n)
 	{
 		dst_ucp[i] = src_ucp[i];
 		if (dst_ucp[i] == c_uc)

@@ -18,11 +18,11 @@ char *ft_strtrim(char const *s1, char const *set)
 	res = malloc(len + 1);
 	i = -1;
 	j = -1;
-	while (++i < len)
+	while (++i < (int)len)
 	{
 		if (ft_contains(set, s1[i]) == 0)
 			res[++j] = s1[i];
-		if (i + 1 == len)
+		if (i + 1 == (int)len)
 			res[++j] = '\0';
 	}
 	return res;

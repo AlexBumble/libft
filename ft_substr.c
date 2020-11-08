@@ -16,10 +16,10 @@ char *ft_substr(char const *s, unsigned int start, size_t len)
 	res = malloc(total_len + 1);
 	if (start > s_len || res == NULL || total_len == 0)
 		return NULL;
-	while (++i < total_len)
+	while (++i < (int)total_len)
 	{
 		res[i] = s[start + i];
-		if (i == total_len - 1)
+		if (i == (int)total_len - 1)
 			res[i + 1] = '\0';
 	}
 	return res;

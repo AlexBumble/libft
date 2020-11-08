@@ -20,7 +20,7 @@ void *ft_memset(void *b, int c, size_t len)
 	i = -1;
 	c_uc = (unsigned char)c;
 	b_ucp = (unsigned char *)b;
-	while(++i < len)
+	while(++i < (int)len)
 		b_ucp[i] = c_uc;
 	
 	return b;

@@ -18,6 +18,6 @@ void ft_bzero(void *s, size_t n)
 
 	i = -1;
 	s_ucp = (unsigned char *)s;
-	while(++i < n)
+	while(++i < (int)n)
 		s_ucp[i] = '\0';
 }

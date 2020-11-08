@@ -24,7 +24,7 @@ void *ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
 	dst_ucp = (unsigned char *)dst;
 	src_ucp = (unsigned char *)src;
 	
-	while(++i < n)
+	while(++i < (int)n)
 		dst_ucp[i] = src_ucp[i];
 	
 	return dst;
