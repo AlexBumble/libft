@@ -11,7 +11,7 @@
 # **************************************************************************** #
 
 NAME	= libft.a
-FLAGS	= -Wall -Werror -Wextra -I. -c
+FLAGS = -Wall -Werror -Wextra -O3 -c
 FILES	= ft_memset.c\
 		ft_bzero.c\
 		ft_memcpy.c\
@@ -45,16 +45,22 @@ FILES	= ft_memset.c\
 		ft_putchar_fd.c\
 		ft_putstr_fd.c\
 		ft_putendl_fd.c\
-		ft_putnbr_fd.c\
+		ft_putnbr_fd.c
 OBJ		= $(FILES:%.c=%.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
+$(OBJ): $(NAME) libft.h
+	gcc $(FLAGS) $< -o $@
+
+$(NAME): $(OBJ) libft.h
 	ar rcs $(NAME) $(OBJ)
 
-$(OBJ): $(FILES)
-	gcc $(CFLAGS) $(FILES)
 
 clean:
 	rm -f $(OBJ)
+
+fclean: clean
+	rm -f $(NAME)
+
+re: fclean all
