@@ -1,11 +1,11 @@
 #include "libft.h"
 #include <stdlib.h>
 
-char *ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t len_s1;
-	size_t len_s2;
-	char *res;
+	size_t	len_s1;
+	size_t	len_s2;
+	char	*res;
 
 	if (!s1 && !s2)
 		return NULL;

@@ -1,45 +1,25 @@
 #include "libft.h"
 #include <stdlib.h>
 
-static int ft_contains(char const *set, char const c);
-
-char *ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	size_t len;
-	char *res;
-	int i;
-	int j;
+	size_t	len;
+	size_t	i;
+	char	*res;
 
-	if (!s1)
+	if (!s1 || !set)
 		return NULL;
 	len = ft_strlen(s1);
-	if (ft_strlen(set) == 0 || len == 0)
-		return (char *)s1;
-	res = malloc(len + 1);
-	i = -1;
-	j = -1;
-	while (++i < (int)len)
-	{
-		if (ft_contains(set, s1[i]) == 0)
-			res[++j] = s1[i];
-		if (i + 1 == (int)len)
-			res[++j] = '\0';
-	}
-	return res;
-}
-
-static int ft_contains(char const *set, char const c)
-{
-	int i;
-
-	if (!set && !c)
-		return 0;
 	i = 0;
-	while(set[i])
-	{
-		if (set[i] == c)
-			return 1;
+	while (i < len && (res = ft_strchr(set, s1[i])) != NULL)
 		i++;
-	}
-	return 0;
+	s1 += i;
+	len -= i;
+	i = 0;
+	while (i < len && (res = ft_strchr(set, s1[len - i - 1])) != NULL)
+		i += 1;
+	res = malloc(len + 1 - i);
+	if (res != NULL)
+		ft_strlcpy(res, s1, len + 1 - i);
+	return res;
 }

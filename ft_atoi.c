@@ -1,10 +1,10 @@
-static int ft_isemptysapce(const char chr);
-static int ft_doatoi(const char *str, int i, int sing);
+static int	ft_isemptysapce(const char chr);
+static int	ft_doatoi(const char *str, int i, int sing);
 
-int ft_atoi(const char *str)
+int			ft_atoi(const char *str)
 {
-	int i;
-	int sign;
+	int	i;
+	int	sign;
 
 	i = 0;
 	sign = 1;
@@ -18,15 +18,15 @@ int ft_atoi(const char *str)
 	return ft_doatoi(str, i, sign);
 }
 
-static int ft_isemptysapce(const char chr)
+static int	ft_isemptysapce(const char chr)
 {
 	return ((chr == '\n') || (chr == '\t') || (chr == '\r') ||
 			(chr == ' ') || (chr == '\f') || (chr == '\v'));
 }
 
-static int ft_doatoi(const char *str, int i, int sign)
+static int	ft_doatoi(const char *str, int i, int sign)
 {
-	long long int res;
+	long long int	res;
 
 	res = 0;
 	while ('0' <= str[i] && str[i] <= '9')

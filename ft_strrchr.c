@@ -1,10 +1,10 @@
 #include "libft.h"
 
-char *ft_strrchr(const char *s, int c)
+char	*ft_strrchr(const char *s, int c)
 {
-	int i;
-	char *res;
-	char c_chr;
+	int		i;
+	char	*res;
+	char	c_chr;
 
 	i = 0;
 	res = NULL;

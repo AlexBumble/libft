@@ -1,12 +1,13 @@
 #include "libft.h"
+#include <stdio.h>
 
-static size_t ft_partscount(char const *s, char c);
-static void ft_dosplit(const char *s, char c, char **res);
+static size_t	ft_partscount(char const *s, char c);
+static void		ft_dosplit(const char *s, char c, char **res);
 
-char **ft_split(char const *s, char c)
+char			**ft_split(char const *s, char c)
 {
-	unsigned int count;
-	char **res;
+	unsigned int	count;
+	char			**res;
 
 	count = ft_partscount(s, c);
 	if(count == 0)
@@ -19,11 +20,11 @@ char **ft_split(char const *s, char c)
 	return res;
 }
 
-static size_t ft_partscount(char const *s, char c)
+static size_t	ft_partscount(char const *s, char c)
 {
-	int i;
-	size_t  flag;
-	size_t partsnum;
+	int		i;
+	size_t	flag;
+	size_t	partsnum;
 
 	if (!s)
 		return 0;
@@ -42,22 +43,26 @@ static size_t ft_partscount(char const *s, char c)
 	return partsnum;
 }
 
-static void ft_dosplit(const char *s, char c, char **res)
+static void		ft_dosplit(const char *s, char c, char **res)
 {
-	unsigned int count;
-	unsigned int i;
-	unsigned int j;
-	unsigned int start;
+	unsigned int	count;
+	unsigned int	i;
+	unsigned int	j;
+	unsigned int	start;
 
 	i = 0;
 	j = 0;
 	count = 0;
+	printf("s = %s\n", s);
+	printf("c = %c\n", c);
 	while(s[i])
 	{
 		if (s[i] != c)
 			count++;
 		if (count > 0 && ((s[i] == c ) || s[i + 1] == '\0'))
 		{
+			printf("s[%d] = %c\n", i, s[i]);
+			printf("s[%d + 1] = %c\n", i, s[i + 1]);
 			start = s[i + 1] == '\0' ? i - count + 1 : i - count;
 			res[j] = ft_substr(s, start,  count);
 			j++;

@@ -1,9 +1,9 @@
 #include "libft.h"
 #include <unistd.h>
 
-void ft_putstr_fd(char *s, int fd)
+void	ft_putstr_fd(char *s, int fd)
 {
-	size_t len;
+	size_t	len;
 
 	if (s)
 	{

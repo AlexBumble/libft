@@ -11,10 +11,10 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-void ft_bzero(void *s, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
-	int i;
-	unsigned char *s_ucp;
+	int				i;
+	unsigned char	*s_ucp;
 
 	i = -1;
 	s_ucp = (unsigned char *)s;
