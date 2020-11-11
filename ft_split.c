@@ -53,17 +53,16 @@ static void		ft_dosplit(const char *s, char c, char **res)
 	i = 0;
 	j = 0;
 	count = 0;
-	printf("s = %s\n", s);
-	printf("c = %c\n", c);
 	while(s[i])
 	{
 		if (s[i] != c)
 			count++;
 		if (count > 0 && ((s[i] == c ) || s[i + 1] == '\0'))
 		{
-			printf("s[%d] = %c\n", i, s[i]);
-			printf("s[%d + 1] = %c\n", i, s[i + 1]);
-			start = s[i + 1] == '\0' ? i - count + 1 : i - count;
+			if (s[i] == c)
+				start = i - count;
+			else
+				start = i - count + 1;
 			res[j] = ft_substr(s, start,  count);
 			j++;
 			count = 0;
