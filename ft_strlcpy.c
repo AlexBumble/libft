@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jbane <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/11/14 12:08:41 by jbane             #+#    #+#             */
+/*   Updated: 2020/11/14 12:08:43 by jbane            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
@@ -6,10 +18,10 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 
 	i = 0;
 	if (!dst || !src)
-		return 0;
+		return (0);
 	if (dstsize > 0)
 	{
-		while(i < (dstsize - 1) && src[i] != '\0')
+		while (i < (dstsize - 1) && src[i] != '\0')
 		{
 			dst[i] = src[i];
 			i++;
@@ -18,5 +30,5 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	}
 	while (src[i] != '\0')
 		i++;
-	return i;
+	return (i);
 }

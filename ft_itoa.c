@@ -6,20 +6,20 @@
 /*   By: jbane <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/14 10:53:36 by jbane             #+#    #+#             */
-/*   Updated: 2020/11/14 10:53:38 by jbane            ###   ########.fr       */
+/*   Updated: 2020/11/14 11:39:26 by jbane            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-static long int	ft_numpow(long int n, int pow)
+static	long int	ft_numpow(long int n, int pow)
 {
 	if (pow == 0)
 		return (1);
 	return (n * ft_numpow(n, pow - 1));
 }
 
-static void		ft_wrightlnum(long int n, char *buf, size_t blen)
+static	void		ft_wrightlnum(long int n, char *buf, size_t blen)
 {
 	long int	pow;
 
@@ -33,7 +33,7 @@ static void		ft_wrightlnum(long int n, char *buf, size_t blen)
 	*buf = '\0';
 }
 
-static void		ft_wrightnum(int n, char *buf, size_t blen)
+static	void		ft_wrightnum(int n, char *buf, size_t blen)
 {
 	if (n < 0)
 	{
@@ -44,7 +44,7 @@ static void		ft_wrightnum(int n, char *buf, size_t blen)
 		ft_wrightlnum(n, buf, blen);
 }
 
-static size_t	ft_numrank(int n, long int div)
+static	size_t		ft_numrank(int n, long int div)
 {
 	if (n > 0)
 		return (ft_numrank(n * -1, div));
@@ -53,8 +53,7 @@ static size_t	ft_numrank(int n, long int div)
 	return (1);
 }
 
-
-char			*ft_itoa(int n)
+char				*ft_itoa(int n)
 {
 	size_t	len;
 	char	*res;

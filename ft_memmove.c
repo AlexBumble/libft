@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jbane <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/11/14 11:51:14 by jbane             #+#    #+#             */
+/*   Updated: 2020/11/14 11:51:20 by jbane            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
@@ -24,5 +36,5 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 			src = (unsigned char *)src + direction;
 		}
 	}
-	return d;
+	return (d);
 }
